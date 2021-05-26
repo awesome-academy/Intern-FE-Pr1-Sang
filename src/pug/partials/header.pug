@@ -1,0 +1,93 @@
+mixin ItemMenu(item, index)
+  li.menu-common__item
+    a.text-hover-bg.menu-common__link(href="")
+      i.fas.fa-caret-right
+      = item
+    if(index ===1)
+      ul.menu-common.menu-common--right
+        -let menuStore=["Tại Hà Nội", "Tại Đà Nẵng", "Tại Hố Chí minh"];
+          each item in menuStore
+            +ItemMenu(item)
+
+header
+  .header 
+    .header__top
+      .container 
+        .header__top__content
+          .header__top__socials 
+            ul.d-flex
+              each item, index in socials
+                li
+                  a(class= `text-hover-bg ${index==0 ? 'active-link' : ''}`, href="")
+                    i(class=item)
+          .header__top__login
+            a.text-hover-bg(href="") Đăng nhập
+            a.text-hover-bg(href="") Đăng ký
+    .header__mid
+      .container 
+        .row.align-items-center
+          .col-xl-3.col-lg-3.col-md-6.col-sm-6.col-12
+            .header__mid__img 
+              a(href="/")
+                img(src="./assets/images/logo_2.png", alt="logo")
+          .col-xl-5.col-lg-5.col-md-0.col-sm-0.col-0
+            .row 
+              .col-xl-6.col-lg-6
+                .header__mid__info 
+                  h2 HOTLINE:
+                  p (04) 9500 9650 - (04) 9500 8850
+              .col-xl-6.col-lg-6    
+                .header__mid__info 
+                  h2 ĐẶT HÀNG NHANH:
+                  p (04) 9500 9650 - (04) 9500 8850
+          .col-xl-4.col-lg-4.col-md-6.col-sm-6.col-12
+            .header__mid__search 
+              .input-group.mb-3
+                input.form-control(type='text', placeholder='Tìm kiếm...', aria-label='search', aria-describedby='basic-addon1')
+              i.fa.fa-search.icon-search
+    .header__bottom 
+      .container 
+        .d-flex.justify-content-space-between
+          nav.header__nav.col-md-0.col-sm-0.col-0
+            ul.menu.d-flex
+              li.menu__item
+                a.active-link(href="/") TRANG CHỦ
+              li.menu__item 
+                a.text-hover(href="") GIỚI THIỆU
+                ul.menu-common
+                  -let menuIntroduce2=["Giới thiệu chung","Hệ thống cửa hàng","Chính sách ưu đãi","Thông tin tuyển dụng"];
+                    each item,index in menuIntroduce2
+                      +ItemMenu(item, index)
+              li.menu__item 
+                a.text-hover(href="/listProducts.html") SẢN PHẨM
+              li.menu__item 
+                a.text-hover(href="") TIN KHUYẾN MÃI
+              li.menu__item 
+                a.text-hover(href="") DỊCH VỤ
+              li.menu__item 
+                a.text-hover(href="") LIÊN HỆ
+          .menu-mobile
+            label(for="oppen-menu")
+              i.fas.fa-bars
+            input(type="checkbox" id="oppen-menu")
+            ul.menu-mobile__list
+              li.menu-mobile__item
+                a.active-link(href="") TRANG CHỦ
+              li.menu-mobile__item 
+                a.text-hover(href="") GIỚI THIỆU
+                ul.menu-mobile__common
+                  -let menuIntroduce=["Giới thiệu chung","Hệ thống cửa hàng","Chính sách ưu đãi","Thông tin tuyển dụng"];
+                    each item,index in menuIntroduce
+                      +ItemMenu(item, index)
+              li.menu-mobile__item 
+                a.text-hover(href="") SẢN PHẨM
+              li.menu-mobile__item 
+                a.text-hover(href="") TIN KHUYẾN MÃI
+              li.menu-mobile__item 
+                a.text-hover(href="") DỊCH VỤ
+              li.menu-mobile__item 
+                a.text-hover(href="") LIÊN HỆ
+          .header__cart   
+            a(href="")
+              i.fas.fa-shopping-cart
+            span 0

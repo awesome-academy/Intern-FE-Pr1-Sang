@@ -1,0 +1,55 @@
+.carousel {
+  .carousel-inner {
+    padding-bottom: 36px !important;
+  }
+}
+
+.carosel-action-container {
+  a {
+    display: inline-block;
+    text-align: center;
+    @include square-box(34px);
+    border: 1px solid $silver;
+    font-size: 1.6rem !important;
+    color: $silver;
+    margin-left: 8px;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}
+
+.desktop {
+  display: block;
+  @include for-size(normal, down) {
+    display: none !important;
+  }
+}
+
+.btnDesktop {
+  @extend .desktop;
+}
+
+.tablet {
+  display: none !important;
+  @include for-size(normal, down) {
+    display: block !important;
+  }
+  @include for-size(mdC, down) {
+    display: none !important;
+  }
+}
+.btnTablet {
+  @extend .tablet;
+}
+
+.phone {
+  @include for-size(mdC, up) {
+    display: none !important;
+  }
+}
+
+.btnPhone {
+  @extend .phone;
+}

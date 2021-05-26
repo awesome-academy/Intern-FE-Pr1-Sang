@@ -1,0 +1,17 @@
+@import "./base/variables";
+@import "./base/global";
+@import "./base/mixin";
+
+@import "./components/carousel";
+@import "./components/modal";
+@import "./components/breadcrumb";
+@import "./layouts/footer";
+@import "./layouts/header";
+@import "./components/categories";
+@import "./components/product";
+@import "./pages/listProducts.scss";
+@import "./pages/detailProduct";
+@import "./pages/detailNews";
+@import "./pages/error";
+
+@import "./pages/index.scss";

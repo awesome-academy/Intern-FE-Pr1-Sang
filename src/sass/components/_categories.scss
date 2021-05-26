@@ -1,0 +1,104 @@
+.list-category {
+  position: relative;
+  margin-bottom: 12px;
+  @include borderMe();
+  &__title {
+    font-size: 1.4rem;
+    color: $yellow;
+    background-color: $black;
+    padding: 20px 14px;
+    margin: 0;
+  }
+  &__content {
+    input {
+      display: none;
+    }
+    @include for-size(normal, up) {
+      label {
+        display: none;
+      }
+    }
+    label {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $yellow;
+      cursor: pointer;
+      width: 50px;
+      text-align: center;
+    }
+
+    &__menu {
+      max-height: 0px;
+      overflow: hidden;
+      @include transition();
+      @include for-size(normal, up) {
+        display: block !important;
+        max-height: 1000px;
+      }
+      li {
+        @include flex-box(flex-start, center);
+      }
+    }
+
+    @include for-size(normal, down) {
+      input[type="checkbox"]:checked + .list-category__content__menu {
+        max-height: 640px;
+      }
+    }
+
+    padding: 0 12px;
+    li {
+      a {
+        display: block;
+        color: $silver;
+        padding: 16px 0;
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  &__color {
+    @include square-box(20px);
+    display: inline-block;
+    margin-right: 12px;
+    &--0 {
+      background-color: $red;
+    }
+    &--1 {
+      background-color: $black-shadow;
+    }
+    &--2 {
+      background-color: $yellow;
+    }
+    &--3 {
+      background-color: blue;
+    }
+    &--4 {
+      background-color: green;
+    }
+  }
+  &--2 {
+    &__item {
+      a {
+        padding-bottom: 0px !important;
+        @include for-size(sm, down) {
+          padding: 0 !important;
+        }
+      }
+      &__img {
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+      &__content {
+        margin: auto;
+        h3 {
+          font-size: 1.5rem;
+          color: $black;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

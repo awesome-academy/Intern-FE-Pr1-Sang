@@ -1,0 +1,146 @@
+.product-item {
+  height: 365px;
+  position: relative;
+  &__container {
+    text-align: center;
+    position: relative;
+    z-index: 99;
+    @include border();
+    overflow: hidden;
+    @include transition();
+  }
+  &__img {
+    width: 150px;
+    margin: 30px auto 0;
+    padding: 30px 0;
+  }
+  &__info {
+    h3 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+  &__stars {
+    @include flex-box(center, center);
+    i {
+      color: $yellow;
+    }
+    span {
+      color: $silver;
+      font-style: italic;
+    }
+  }
+  &__action {
+    padding: 16px 0 8px;
+    width: 100%;
+    margin-bottom: -50px;
+    margin-top: 20px;
+    text-align: center;
+    @include transition();
+  }
+  &:hover {
+    .product-item__container {
+      @include borderMe();
+      z-index: 1000;
+    }
+    .product-item__action {
+      margin-bottom: 10px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.product-max-height {
+  .product-item {
+    height: 717px !important;
+
+    &__info {
+      padding-bottom: 30px;
+      @include for-size(xl, down) {
+        padding-bottom: 112px;
+      }
+    }
+    &__img {
+      height: 75%;
+      width: 90%;
+    }
+  }
+}
+
+.btn--color-primary {
+  background-color: #f5bd10;
+}
+
+.btn--color-primary,
+.btn--bg-black {
+  color: #fff;
+  padding: 8px;
+  width: 92px;
+  font-size: 1.3rem;
+  margin: 0 6px;
+  text-align: center;
+  @include for-size(xl, down) {
+    width: 92px !important;
+    padding: 8px !important;
+  }
+  @include for-size(normal, down) {
+    width: 100px;
+  }
+}
+
+.btn--bg-black:hover {
+  color: $white !important;
+}
+
+.product-item--2 {
+  text-align: left;
+  @include border();
+  margin-bottom: 24px;
+  @include for-size(mdC, down) {
+    display: flex;
+    flex-direction: column;
+  }
+  &__img {
+    width: 100%;
+    margin: auto;
+    @include for-size(mdC, down) {
+      width: 60%;
+    }
+  }
+  &__info {
+    padding: 16px;
+    h3 {
+      font-size: 1.6rem;
+    }
+  }
+  &__stars {
+    i {
+      color: $yellow;
+    }
+    @include flex-box(flex-start, center);
+    span {
+      color: $silver;
+    }
+  }
+  &__desc {
+    color: $silver;
+  }
+  &__action {
+    text-align: left;
+    margin-left: -4px;
+  }
+  &:hover {
+    @include borderMe();
+    .product-item__action {
+      margin-bottom: -50px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 990px) and (max-width: 995px) {
+  .btn--color-primary,
+  .btn--bg-black {
+    width: 100px !important;
+  }
+}

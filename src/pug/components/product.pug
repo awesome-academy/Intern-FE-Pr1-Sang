@@ -1,0 +1,55 @@
+mixin product({img, name, price, assessAmount, stars})
+  .product-item
+    .product-item__container
+      .product-item__img
+        img(src= img, alt= name)
+      .product-item__info 
+        p.text-price.product-item__price= `${price} Đ` 
+        h3= name
+        .product-item__stars.d-flex
+          ul.d-flex
+            - let i = 0;
+            while i < stars
+                li 
+                    i.fas.fa-star
+                    - i++
+            if !Number.isInteger(stars)
+                li 
+                    i.fas.fa-star-half-alt
+                    - i++
+            while i < 5
+                li 
+                    i.far.fa-star
+                    - i++
+          span= ` (${assessAmount} đánh giá)`
+      .product-item__action 
+        a.btn.btn-warning.btn--color-primary(href="") MUA NGAY
+        a.btn.btn-dark.btn--bg-black(href="") XEM CHI TIẾT
+
+mixin product-2({img, name, price, assessAmount, content, stars})
+  .product-item--2.d-flex
+    .product-item--2__img
+      img(src= img, alt= name)
+    .product-item--2__info  
+      h3= name
+      .product-item--2__stars.d-flex
+        ul.d-flex
+          - let i = 0;
+          while i < stars
+              li 
+                  i.fas.fa-star
+                  - i++
+          if !Number.isInteger(stars)
+              li 
+                  i.fas.fa-star-half-alt
+                  - i++
+          while i < 5
+              li 
+                  i.far.fa-star
+                  - i++
+        span= ` (${assessAmount} đánh giá)`
+      p.product-item--2__desc.text-clamp.text-clamp--2= content
+      p.text-price.product-item--2__price= `${price} Đ` 
+      .product-item--2__action
+        a.btn.btn-warning.btn--color-primary(href="#") MUA NGAY
+        a.btn.btn-dark.btn--bg-black(href="#") XEM CHI TIẾT

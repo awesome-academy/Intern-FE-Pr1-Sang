@@ -1,0 +1,72 @@
+mixin carouselHome(list)
+    #carouselHome.carousel.slide(data-ride = 'carousel')
+        ul.carousel-indicators
+            li(data-target="#carouselHome" data-slide-to="0" class="normal active")
+            li(data-target="#carouselHome" data-slide-to="1" class="normal")
+            li(data-target="#carouselHome" data-slide-to="2" class="normal")
+        .carousel-inner
+          each item,index in list
+            div(class=`carousel-item ${index ===0 ? 'active' : ''}`)
+              img(src="./assets/images/SLIDER.jpg", alt="banner1")
+        
+mixin carouselProduct(list, nameId, size, lg, md, sm, type)
+  div( id=nameId, class = `${type} carousel slide` data-ride = 'carousel'  )
+    .carousel-inner
+      - for(let i =0; i < list.length; i+= size)
+          div(class= `carousel-item ${i ===0 ? 'active' : ''}`)
+            -let newList = list.slice(i, i+size);
+              if size !== 5
+                .row 
+                  each item in newList
+                    div(class =  `col-lg-${lg} col-md-${md} col-${sm}`)
+                      +product(item)
+              if size === 5
+                  - var [item1,item2,item3,item4,item5] = newList;
+                    .row
+                      .col-xl-3.col-lg-3
+                        .row 
+                          .col-xl-12.col-lg-12
+                            +product(item1)
+                          .col-xl-12.col-lg-12
+                            +product(item2)
+                      .col-xl-6.col-lg-6.product-max-height
+                        +product(item3)
+                      .col-xl-3.col-lg-3
+                        .row 
+                          .col-xl-12.col-lg-12
+                            +product(item4)
+                          .col-xl-12.col-lg-12
+                            +product(item5)
+
+mixin carouselProduct-2(list, nameId, size, lg, md, sm, type)
+  div( id=nameId, class = `${type} carousel slide` data-ride = 'carousel'  )
+    .carousel-inner
+      - for(let i =0; i < list.length; i+= size)
+          div(class= `carousel-item ${i ===0 ? 'active' : ''}`)
+            -let newList = list.slice(i, i+size);
+                .row 
+                  each item in newList
+                    div(class =  `col-lg-${lg} col-md-${md} col-${sm}`)
+                      +product-2(item)
+
+mixin actionCarousel(id, id1, id2)
+  -let title = 0
+  while (title++ < 3)
+    div(class=`${title == 1 ? 'btnDesktop' : ''} ${title == 2 ? 'btnTablet' : ''} ${title == 3 ? 'btnPhone' : ''} carosel-action-container d-lfex `)
+        a(href=`#${title == 1 ? 'carouselProduct'+id :`${title==2 ? 'carouselProduct'+id1 : 'carouselProduct'+id2}`}` data-slide="prev")
+            i.fas.fa-caret-left
+        a(href=`#${title == 1 ? 'carouselProduct'+id :`${title==2 ? 'carouselProduct'+id1 : 'carouselProduct'+id2}`}` data-slide="next")
+            i.fas.fa-caret-right
+
+mixin carouselPartners(list,size, lg, md, sm, type)
+  div(class=`carousel slide ${type}`,data-ride = 'carousel')
+    .carousel-inner
+      - for(let i =0; i < list.length; i+= size)
+          div(class= `carousel-item ${i ===0 ? 'active' : ''}`)
+            -let newList = list.slice(i, i+size);
+                .row 
+                  each item in newList
+                    div(class =  `col-lg-${lg} col-md-${md} col-${sm}`)
+                      .img-content
+                        img(src= item, alt="banner1")
+                
