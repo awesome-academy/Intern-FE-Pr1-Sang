@@ -24,7 +24,7 @@ mixin product({img, name, price, assessAmount, stars})
           span= ` (${assessAmount} đánh giá)`
       .product-item__action 
         a.btn.btn-warning.btn--color-primary(href="") MUA NGAY
-        a.btn.btn-dark.btn--bg-black(href="") XEM CHI TIẾT
+        a.btn.btn-dark.btn--bg-black(href="/detailProduct.html") XEM CHI TIẾT
 
 mixin product-2({img, name, price, assessAmount, content, stars})
   .product-item--2.d-flex
@@ -52,4 +52,4 @@ mixin product-2({img, name, price, assessAmount, content, stars})
       p.text-price.product-item--2__price= `${price} Đ` 
       .product-item--2__action
         a.btn.btn-warning.btn--color-primary(href="#") MUA NGAY
-        a.btn.btn-dark.btn--bg-black(href="#") XEM CHI TIẾT
+        a.btn.btn-dark.btn--bg-black(href="/detailProduct.html") XEM CHI TIẾT

@@ -1,0 +1,9 @@
+mixin breadcrumb(list)
+  nav(aria-label="breadcrumb")
+    ol.breadcrumb
+      each item,index in list
+        if index != list.length - 1
+          li.breadcrumb-item
+            a(href=`${item.link}`)= item.name
+        else
+          li(class="breadcrumb-item active" aria-current="page")= item.name
