@@ -1,0 +1,93 @@
+.footer {
+  &__info {
+    padding: 50px 0;
+    h2 {
+      font-size: 1.3rem;
+      i {
+        color: $yellow;
+        margin-right: 12px;
+      }
+    }
+    &__item {
+      @include for-size(mdC, down) {
+        margin-top: 24px;
+      }
+      p {
+        margin-bottom: 24px;
+      }
+      &__link {
+        color: $black;
+        i {
+          margin-right: 12px;
+        }
+      }
+      ul {
+        li {
+          i {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    &__payment {
+      img {
+        width: 103px;
+        height: 35px;
+        margin: 0 16px 12px;
+        border: 1px solid rgb(226, 226, 226);
+      }
+    }
+    &__response {
+      &__container {
+        @include for-size(mdC, down) {
+          flex-direction: column;
+        }
+      }
+      &__item {
+        margin: 0 16px;
+        &__icon {
+          color: $yellow;
+          @include square-box(58px);
+          @include flex-box(center, center);
+          font-size: 1.6rem;
+          border-radius: 50%;
+          border: 1px solid $yellow;
+        }
+        &__content {
+          p {
+            text-align: center;
+          }
+          p:last-child {
+            font-size: 1.6rem;
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+  &__copy-right {
+    background-color: $black;
+    p {
+      color: $white;
+      span {
+        color: $silver;
+      }
+    }
+    .nav__footer {
+      ul {
+        flex-wrap: wrap;
+        @include flex-box(center, center);
+        li {
+          a {
+            display: inline-block;
+            color: $silver;
+            padding: 20px 16px;
+            @include for-size(mdC, down) {
+              padding: 16px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

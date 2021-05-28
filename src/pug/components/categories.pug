@@ -1,0 +1,37 @@
+mixin Category(title, id, icon, iconSub, list, isColor)
+  .list-category 
+    h2.list-category__title
+      +titleItemCommon(icon, title)
+    .list-category__content
+      label(for= id)
+        i.fas.fa-chevron-down
+      input(type="checkbox" id= id)
+      ul.list-category__content__menu
+        each item,index in list 
+          li
+            if isColor == true
+              span(class=`list-category__color list-category__color--${index}`)  
+              a.text-hover(href="")= item
+            else 
+              a.text-hover(href="")
+                i(class= iconSub)
+                = item
+
+mixin Category2(title, id, icon, list)
+  .list-category 
+    h2.list-category__title
+      +titleItemCommon(icon, title)
+    .list-category__content
+      label(for= id)
+        i.fas.fa-chevron-down
+      input(type="checkbox" id= id)
+      ul.list-category__content__menu
+        - for(let i =0; i <5; i++)
+            li.list-category--2__item
+              a.d-flex(href="")
+                .list-category--2__item__img
+                  img(src= list[i].img)
+                .list-category--2__item__content 
+                  h3= list[i].name
+                  p.text-price= list[i].price 
+        

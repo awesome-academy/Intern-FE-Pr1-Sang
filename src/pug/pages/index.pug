@@ -1,0 +1,99 @@
+extend ../base/base.pug
+block content
+	+RegisterHome
+	section.slide-bar.mt-50 
+		.container
+			.row
+				.col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12
+					.slide-bar__left 
+						-let lisImgCarouselHome = ["./assets/images/SLIDER.jpg", "./assets/images/SLIDER.jpg", "./assets/images/SLIDER.jpg"];
+							+carouselHome(lisImgCarouselHome)
+				.col-xl-4.col-lg-4.col-md-12.col-sm-12.col-12
+					.slide-bar__right
+						each item in commitment
+							+titleHomeItem(item) 
+		
+	section.product-highlight
+		.container 
+			.product-highlight__header.section-header.d-flex.justify-content-space-between
+				+titleItemCommon("fas fa-th-large","SẢN PHẨM NỔI BẬT")
+				+actionCarousel("", "1", "2")
+			.row 
+				.col-xl-3.col-lg-3.col-md-12.col-sm-12.col-12
+					.category 
+						+Category("DANH MỤC SẢN PHẨM", "category", "fas fa-th-large", "fas fa-th-large", listFilter, false)
+				.col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12
+					.product-highlight__content
+						+carouselProduct(products, "carouselProduct", 6, 4, 6, 12, "desktop")
+						+carouselProduct(products, "carouselProduct1", 2, 4, 6, 12, "tablet")
+						+carouselProduct(products, "carouselProduct2", 1, 4, 6, 12, "phone") 
+		
+	section.product-new
+		.container 
+			.product-new__header.section-header.d-flex.justify-content-space-between
+				+titleItemCommon("fas fa-th-large","SẢN PHẨM MỚI")
+				.d-flex
+					+listActionHeader()
+					+actionCarousel("3", "4", "5")
+			.row 
+				.col-xl-12 
+					.product-new__content
+						+carouselProduct(newProducts, "carouselProduct3", 3, 4, 6, 12, "desktop")
+						+carouselProduct(newProducts, "carouselProduct4", 2, 4, 6, 12, "tablet")
+						+carouselProduct(newProducts, "carouselProduct5", 1, 4, 6, 12, "phone")
+		
+	section.sub-banner.mt-30
+		.container 
+			.row 
+				.col-xl-6.col-lg-6.col-md-12 
+					.sub-banner__img 	
+						img(src="./assets/images/banner/1.png", alt="banner")
+				.col-xl-6.col-lg-6.col-md-12 
+					.sub-banner__img 	
+						img(src="./assets/images/banner/2.png", alt="banner") 
+		
+	section.product-selling.mt-50
+		.container 
+			.product-selling__header.section-header.d-flex.justify-content-space-between
+				+titleItemCommon("fas fa-th-large","SẢN PHẨM BÁN CHẠY")
+				.d-flex
+					+listActionHeader()
+					+actionCarousel("6", "7", "8")
+			.row 
+				.col-xl-12.col-lg-12 
+					+carouselProduct(sellingProduct, "carouselProduct6", 5, 4, 6, 12, "desktop")
+					+carouselProduct(sellingProduct, "carouselProduct7", 2, 4, 6, 12, "tablet")
+					+carouselProduct(sellingProduct, "carouselProduct8", 1, 4, 6, 12, "phone")
+		
+	section.sub-banner-2
+		.container 
+			.row 
+				.col-xl-12.col-lg-12 
+					.sub-banner-2__img 
+						img(src="./assets/images/banner/3.png", alt="banner") 
+	 
+	section.product-new-2.mt-50
+		.container 
+			.product-new-2__header.section-header.d-flex.justify-content-space-between
+				+titleItemCommon("fas fa-th-large","HÀNG MỚI VỀ")
+				+actionCarousel("9", "10", "11")
+			.row 
+				.col-xl-12.col-lg-12 
+					+carouselProduct-2(newProduct2, "carouselProduct9", 4, 6, 6, 12, "desktop")
+					+carouselProduct-2(newProduct2, "carouselProduct10", 2, 6, 6, 12, "tablet")
+					+carouselProduct-2(newProduct2, "carouselProduct11", 1, 6, 6, 12, "phone")
+
+	section.partners
+		.container
+			+carouselPartners(partners, 5, 21 , 6, 12, 'desktop')
+			+carouselPartners(partners, 2, 6 , 6, 12, 'tablet')
+			+carouselPartners(partners, 1, 6 , 6, 12,'phone')
+
+	section.register.mt-50
+		.container
+			.register__content.h-100
+				h2 Đăng ký để nhận tin tức khuyến mãi hàng tuần
+				.register__content__input
+					.input-group.mb-3
+						input.form-control(type='text', placeholder='Nhập email của bạn...', aria-label='search', aria-describedby='basic-addon1')
+					a.btn.btn-warning.btn--color-primary(href="#") Đăng ký

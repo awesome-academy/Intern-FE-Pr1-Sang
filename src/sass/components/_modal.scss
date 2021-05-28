@@ -1,0 +1,157 @@
+.commitment-item {
+  height: 25%;
+  width: 100%;
+  padding: 16px 16px 16px 0;
+  @include for-size(normal, down) {
+    @include border();
+    padding: 16px;
+  }
+  &__icon {
+    min-width: 75px;
+    font-size: 3.2rem;
+    color: $yellow;
+    text-align: center;
+  }
+  &__info {
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.text-hover-bg--icon:hover {
+  i {
+    color: $white;
+  }
+}
+
+.title-item-common {
+  span:first-child {
+    color: $yellow;
+    margin-right: 12px;
+  }
+}
+
+.header-action {
+  @include for-size(normal, down) {
+    display: none !important;
+  }
+  &__item {
+    a {
+      color: $silver;
+      border: 1px solid $silver;
+      border-radius: 0;
+      margin: 0 4px;
+    }
+  }
+}
+
+.btn--no-bg {
+  padding: 8px 16px;
+}
+
+#register-home {
+  display: none;
+}
+
+#register-home:checked ~ .overlay {
+  display: none;
+}
+
+#register-home:checked ~ .register-home {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+.register-home {
+  position: fixed;
+  top: 0;
+  width: 60%;
+  z-index: 999;
+  display: none;
+  @include transform(50%, -50%, "", "");
+  @include for-size(normal, up) {
+    display: block;
+    &__checkbox {
+      display: none;
+    }
+
+    &__form {
+      position: relative;
+      z-index: 9999;
+      background-image: url("./../assets/images/bg-regisrer.png");
+      width: 100%;
+      margin: 50px auto;
+      &__exit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include square-box(40px);
+        background-color: $black;
+        color: $yellow;
+        font-size: 3.2rem;
+        text-align: center;
+        line-height: 40px;
+        z-index: 999999;
+        cursor: pointer;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      &__content {
+        position: relative;
+        z-index: 99999;
+        padding: 72px 90px;
+        text-align: center;
+        p {
+          font-size: 1.5rem;
+          margin-bottom: 12px;
+          color: #333;
+        }
+        .input-group {
+          input {
+            padding: 16px 12px;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+          }
+        }
+        a {
+          color: $white !important;
+          font-size: 1.6rem;
+          margin: 0;
+          padding: 14px 0;
+          width: 100%;
+          margin-bottom: 12px;
+        }
+        .form-check {
+          padding: 0;
+          display: flex;
+          align-items: center;
+          input {
+            display: block;
+            @include square-box(16px);
+            margin: 0;
+          }
+          label {
+            margin-left: 4%;
+          }
+        }
+      }
+    }
+  }
+}

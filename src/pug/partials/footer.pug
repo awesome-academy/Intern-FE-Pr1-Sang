@@ -1,0 +1,81 @@
+footer 
+  .footer 
+    .container  
+      .footer__info 
+        .row 
+          .col-xl-9.col-lg-9  
+              .footer__info__item
+                h2 
+                  i.fas.fa-th-large 
+                  |VỀ CHÚNG TÔI
+                ul
+                  li Công ty Cổ phần Công nghệ DKT đã và đang khẳng định được
+                  li vị trí hàng đầu trong lĩnh vực Thương mại điện tử.
+                  li 
+                    i.fas.fa-map-marker-alt.
+                    | Tầng 4 - Tòa nhà Hanoi Group 442 Đội Cấn Ba Đình - Hà Nội
+                  li 
+                    i.fas.fa-envelope
+                    | support@dkt.com.vn
+                  li 
+                    i.fas.fa-mobile-alt
+                    | (84-4) 66558868 - (84-4) 37868904
+          .col-xl-3.col-lg-3
+              .footer__info__item
+                
+                h2 
+                  i.fas.fa-th-large 
+                  |VỀ CHÚNG TÔI
+                ul
+                  -
+                    let socialsFooter = [{"icon":"fab fa-facebook-f", "name": "Facebook"}, 
+                      {"icon":"fab fa-google-plus-g", "name": "Google"},
+                      {"icon":"fab fa-instagram", "name": "Instagram"},
+                      {"icon":"fab fa-skype", "name": "Skype"},
+                      {"icon":"fab fa-twitter", "name": "Twitter"}];
+
+                  each item in socialsFooter
+                    li 
+                      a.text-hover.footer__info__item__link(href="")
+                        i(class= item.icon)
+                        = item.name
+  
+        .row.padding-top-50
+          .col-xl-6.col-lg-6
+            .footer__info__payment 
+              p Thanh toán:
+              each item in logoPayment
+                span.footer__info__payment__img
+                  img(src= item, alt="logo payment")
+          .col-xl-6.col-lg-6  
+            .footer__info__response  
+              p Giải đáp nhanh:
+              .footer__info__response__container.d-flex
+                .footer__info__response__item.d-flex
+                  .footer__info__response__item__icon
+                    i.fas.fa-phone 
+                  .footer__info__response__item__content
+                    p Tư vấn miễn phí (24/7)
+                    p 1900 650 650
+                .footer__info__response__item.d-flex
+                  .footer__info__response__item__icon
+                    i.fas.fa-comments-dollar
+                  .footer__info__response__item__content
+                    p Góp ý - phản hồi - thắc mắc
+                    p 1900 650 650
+            
+    .footer__copy-right 
+      .container
+        .row.align-items-center
+          .col-lg-5.col-lg-5.col-md-12.col-sm-12.col-12 
+            p Bản quyền thuộc về 
+              span Design Team. 
+              |Phát triển bởi 
+              span Bizweb
+          .col-lg-7.col-lg-7.col-md-12.col-sm-12.col-12 
+            nav.nav__footer 
+              ul.d-flex 
+                -let titleNavFooter = ["Trang chủ", "Giới thiệu","Sản phẩm","Tin khuyến mãi","Dịch vụ","Liên hệ"]
+                each item in titleNavFooter
+                  li 
+                    a.text-hover(href="")= item 
