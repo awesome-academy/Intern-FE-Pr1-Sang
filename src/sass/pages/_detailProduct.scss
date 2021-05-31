@@ -1,0 +1,150 @@
+.product-detail {
+  &__main {
+    &__img-big {
+      @include border();
+      padding: 24px;
+    }
+    &__img-sm {
+      margin-top: 12px;
+      &__item {
+        max-width: 16.6666%;
+        @include border();
+        padding: 4px;
+      }
+    }
+    &__info {
+      border-bottom: 1px solid $silver;
+      padding-bottom: 16px;
+      p:nth-child(2) {
+        span:nth-child(2) {
+          color: silver;
+          font-style: italic;
+          margin-left: 4px;
+          padding-right: 12px;
+          border-right: 1px solid $silver;
+        }
+        a {
+          color: $black;
+          text-decoration: underline;
+          margin-left: 12px;
+        }
+      }
+    }
+    &__info-more {
+      p:first-child {
+        margin: 16px 0px;
+      }
+      p:last-child {
+        color: $silver;
+      }
+    }
+    &__option {
+      select {
+        height: 36px;
+        font-size: 1.5rem;
+      }
+      padding-bottom: 16px;
+      border-bottom: 1px solid $silver;
+    }
+    &__order {
+      margin-top: 16px;
+      input {
+        width: 100px;
+        text-align: center;
+      }
+      button {
+        font-weight: bold;
+      }
+    }
+    &__social {
+      @include flex-box(space-between, center);
+      margin: 0 -8px;
+      &__left {
+        @include flex-box(flex-start, center);
+        > a:nth-child(1) {
+          background-color: #5776cd;
+          color: $white;
+        }
+        > a:nth-child(3) {
+          background-color: #0685ca;
+          color: $white;
+        }
+        > a:nth-child(4) {
+          color: $red;
+          @include border();
+        }
+      }
+      &__right {
+        > a {
+          display: inline-block;
+          background-color: $red;
+          color: $white;
+          padding: 4px;
+        }
+      }
+      a {
+        padding: 0px 8px;
+        margin: 8px;
+        line-height: 24px;
+        border-radius: 4px;
+        span {
+          padding-left: 4px;
+        }
+      }
+      &__rating {
+        display: inline-block;
+        @include square-box(20px);
+        background-color: $silver;
+        color: #fff;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 20px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: -5px;
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 10px solid $silver;
+        }
+      }
+    }
+  }
+  &__nav-tabs {
+    margin-top: 32px;
+    .fade {
+      opacity: 1;
+    }
+    .tab-content {
+      @include border();
+      padding: 12px;
+    }
+    ul {
+      border: none;
+      margin-bottom: 32px;
+
+      li {
+        @include for-size(mdC, down) {
+          width: 100%;
+        }
+        a {
+          padding: 24px 48px;
+          border: 1px solid #888;
+          color: $black;
+          @include for-size(mdC, down) {
+            display: block;
+            padding: 16px 48px;
+            width: 100%;
+          }
+        }
+        a.active {
+          background-color: $black;
+          color: $yellow;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+extend ../base/base.pug
+block content
+  section.product-detail 
+    .container 
+      -let listBreadcrumb = [{link: "/", name:"Trang chủ"}, {link: "/listProducts.html",name:"Danh mục sản phẩm"}, {name:"Máy khoan BLACK DECKER"}]; 
+        +breadcrumb(listBreadcrumb)
+      .row 
+        .col-xl-3.col-lg-3.col-md-12.col-sm-12.col-12 
+          .product-detail__catigory 
+            +Category("DANH MỤC SẢN PHẨM", "category1", "fas fa-th-large", "fas fa-th-large", listFilter, false)
+            +Category2("SẢN PHẨM KHUYẾN MÃI", "category4", "fas fa-gift", newProduct2)
+        .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12
+          .product-detail__main 
+            .row 
+              .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-12 
+                .product-detail__main__img-big 
+                  img(src="./assets/images/products/1.png", alt="img big")
+                .product-detail__main__img-sm 
+                  ul.d-flex
+                    each item in imgProductList
+                      li.product-detail__main__img-sm__item
+                        img(src=item, alt="img small")
+              .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-12 
+                .product-detail__main__info 
+                  p Máy khoan CNC 3D
+                  p 
+                    span 
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.far.fa-star
+                      i.far.fa-star
+                    span ( 12 đánh giá )
+                    a(href="#") Gửi bình luận của bạn
+                  p.text-price GYN: 2.350.000 Đ
+                .product-detail__main__info-more
+                  p Thông tin sản phẩm :
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    |incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis 
+                    |nostrud exercition ullamco laboris nisi ut aliquip ex ea commodo consequat
+                .product-detail__main__option 
+                  .row 
+                    .col-6
+                      label(for='inputGroupSelect01') Size :
+                      select#inputGroupSelect01.custom-select
+                        option(selected='') --Chọn size--
+                        option(value='1') One
+                        option(value='2') Two
+                        option(value='3') Three
+                    .col-6
+                      label(for='inputGroupSelect02') Màu sắc :
+                      select#inputGroupSelect02.custom-select
+                        option(selected='') --Chọn màu--
+                        option(value='1') One
+                        option(value='2') Two
+                        option(value='3') Three
+                .product-detail__main__order 
+                  input(type="number" value="1" id="quantity" name="quantity" min="1" max="5")
+                  button.btn.btn-warning.btn--color-primary Mua ngay
+                .product-detail__main__social 
+                  .product-detail__main__social__left 
+                    a(href="#")
+                      i.fab.fa-facebook-square
+                      span Like 
+                    span.product-detail__main__social__rating 0
+                    a(href="#")
+                      i.fab.fa-twitter-square
+                      span Twitter 
+                    a(href="#")
+                      i.fab.fa-google-plus-g
+                      span 1 
+                    span.product-detail__main__social__rating 0 
+                  .product-detail__main__social__right
+                    a(href="") 
+                      i.fas.fa-plus-square
+                      span Share
+          .product-detail__nav-tabs 
+            ul.nav.nav-tabs
+              li
+                a.active(data-toggle='tab', href='#home') THÔNG TIN SẢN PHẨM
+              li
+                a(data-toggle='tab', href='#menu1') ĐÁNH GIÁ - NHẬN XÉT
+              li
+                a(data-toggle='tab', href='#menu2') THẺ TAGS
+            .tab-content
+              #home.tab-pane.fade.in.active
+                p The idea is a box with zero width and height. 
+                  |Saepe ratione dolorum vero aut! Nam perferendis, laborum quidem fugit adipisci recusandae ullam tempore officiis voluptate aut deserunt qui ab nemo. 
+                  |Possimus debitis harum animi assumenda sequi est molestiae ex sunt iusto iste ab, commodi corporis facilis odit fugiat soluta, 
+                  |esse error veniam doloremque cupiditate porro quasi iure. Ad illum nam corrupti ratione animi. 
+                  |Veniam, sit ipsam provident consequuntur itaque sint tenetur quo minima perferendis ipsa autem rem nesciunt aut 
+                  |odit consectetur culpa perspiciatis cum? Dolorem quasi tempore voluptatibus maxime fugiat incidunt ab 
+                  |corrupti eum sunt, facere illo harum neque eveniet fugit. Ullam reiciendis ab nesciunt vel eius labore 
+                  |eveniet! Reprehenderit maiores sunt quos, architecto quidem natus vero illum rerum, eligendi est quasi 
+                  |ipsa delectus possimus alias similique soluta eum cumque quibusdam assumenda non? Eos qui voluptas 
+                  |placeat dolore deserunt? Dignissimos molestias amet quam, laudantium doloribus maiores vel. 
+                  |Repellat est cumque sunt ut, incidunt qui ducimus earum, repudiandae voluptas vero doloribus suscipit. 
+                  |Assumenda nisi, pariatur doloribus veritatis aut esse veniam. Consequuntur repellendus, quisquam id qui 
+                  |reprehenderit officia incidunt officiis velit ducimus tempore nostrum labore atque accusamus, fugit perspiciatis 
+                  |neque eveniet! Error qui, animi eius voluptatibus facere quisquam atque cupiditate fugiat quaerat libero expedita 
+                  |dicta quis unde necessitatibus doloribus quia id impedit amet tempore rerum nihil soluta. Et impedit sequi nihil 
+                  |cum deserunt, nisi harum distinctio iure quae voluptate, expedita facere dolores quasi rem voluptatibus perspiciatis 
+                  |asperiores architecto quidem nesciunt ipsa. Consectetur ab cum in praesentium. Praesentium architecto optio officiis 
+                  |earum? Rerum quos necessitatibus cupiditate quisquam sunt reprehenderit dignissimos nemo impedit similique commodi rem 
+                  |illo beatae eos aliquid nam nulla voluptatum, optio deleniti fugiat. Tenetur, dolore beatae iste quos distinctio incidunt 
+                  |veniam, animi dolores odio iusto natus alias corporis repellendus deleniti molestiae laudantium esse magni reprehenderit suscipit. 
+                  |Accusamus quis rerum doloremque expedita? Quo!
+              #menu1.tab-pane.fade 
+                p The actual width and height of the arrow is determined by the width of the border.
+                  |Saepe ratione dolorum vero aut! Nam perferendis, laborum quidem fugit adipisci recusandae ullam tempore officiis voluptate aut deserunt qui ab nemo. 
+                  |Possimus debitis harum animi assumenda sequi est molestiae ex sunt iusto iste ab, commodi corporis facilis odit fugiat soluta, 
+                  |esse error veniam doloremque cupiditate porro quasi iure. Ad illum nam corrupti ratione animi. 
+                  |Veniam, sit ipsam provident consequuntur itaque sint tenetur quo minima perferendis ipsa autem rem nesciunt aut 
+                  |odit consectetur culpa perspiciatis cum? Dolorem quasi tempore voluptatibus maxime fugiat incidunt ab 
+                  |corrupti eum sunt, facere illo harum neque eveniet fugit. Ullam reiciendis ab nesciunt vel eius labore 
+                  |eveniet! Reprehenderit maiores sunt quos, architecto quidem natus vero illum rerum, eligendi est quasi 
+                  |ipsa delectus possimus alias similique soluta eum cumque quibusdam assumenda non? Eos qui voluptas 
+                  |placeat dolore deserunt? Dignissimos molestias amet quam, laudantium doloribus maiores vel. 
+                  |Repellat est cumque sunt ut, incidunt qui ducimus earum, repudiandae voluptas vero doloribus suscipit. 
+                  |Assumenda nisi, pariatur doloribus veritatis aut esse veniam. Consequuntur repellendus, quisquam id qui 
+                  |reprehenderit officia incidunt officiis velit ducimus tempore nostrum labore atque accusamus, fugit perspiciatis 
+                  |neque eveniet! Error qui, animi eius voluptatibus facere quisquam atque cupiditate fugiat quaerat libero expedita 
+                  |dicta quis unde necessitatibus doloribus quia id impedit amet tempore rerum nihil soluta. Et impedit sequi nihil 
+                  |cum deserunt, nisi harum distinctio iure quae voluptate, expedita facere dolores quasi rem voluptatibus perspiciatis 
+                  |asperiores architecto quidem nesciunt ipsa. Consectetur ab cum in praesentium. Praesentium architecto optio officiis 
+                  |earum? Rerum quos necessitatibus cupiditate quisquam sunt reprehenderit dignissimos nemo impedit similique commodi rem 
+                  |illo beatae eos aliquid nam nulla voluptatum, optio deleniti fugiat. Tenetur, dolore beatae iste quos distinctio incidunt 
+                  |veniam, animi dolores odio iusto natus alias corporis repellendus deleniti molestiae laudantium esse magni reprehenderit suscipit. 
+                  |Accusamus quis rerum doloremque expedita? Quo!
+              #menu2.tab-pane.fade
+                p In an up arrow, for example, the bottom border is colored while the left and right are transparent, which forms the triangle.
+                  |Saepe ratione dolorum vero aut! Nam perferendis, laborum quidem fugit adipisci recusandae ullam tempore officiis voluptate aut deserunt qui ab nemo. 
+                  |Possimus debitis harum animi assumenda sequi est molestiae ex sunt iusto iste ab, commodi corporis facilis odit fugiat soluta, 
+                  |esse error veniam doloremque cupiditate porro quasi iure. Ad illum nam corrupti ratione animi. 
+                  |Veniam, sit ipsam provident consequuntur itaque sint tenetur quo minima perferendis ipsa autem rem nesciunt aut 
+                  |odit consectetur culpa perspiciatis cum? Dolorem quasi tempore voluptatibus maxime fugiat incidunt ab 
+                  |corrupti eum sunt, facere illo harum neque eveniet fugit. Ullam reiciendis ab nesciunt vel eius labore 
+                  |eveniet! Reprehenderit maiores sunt quos, architecto quidem natus vero illum rerum, eligendi est quasi 
+                  |ipsa delectus possimus alias similique soluta eum cumque quibusdam assumenda non? Eos qui voluptas 
+                  |placeat dolore deserunt? Dignissimos molestias amet quam, laudantium doloribus maiores vel. 
+                  |Repellat est cumque sunt ut, incidunt qui ducimus earum, repudiandae voluptas vero doloribus suscipit. 
+                  |Assumenda nisi, pariatur doloribus veritatis aut esse veniam. Consequuntur repellendus, quisquam id qui 
+                  |reprehenderit officia incidunt officiis velit ducimus tempore nostrum labore atque accusamus, fugit perspiciatis 
+                  |neque eveniet! Error qui, animi eius voluptatibus facere quisquam atque cupiditate fugiat quaerat libero expedita 
+                  |dicta quis unde necessitatibus doloribus quia id impedit amet tempore rerum nihil soluta. Et impedit sequi nihil 
+                  |cum deserunt, nisi harum distinctio iure quae voluptate, expedita facere dolores quasi rem voluptatibus perspiciatis 
+                  |asperiores architecto quidem nesciunt ipsa. Consectetur ab cum in praesentium. Praesentium architecto optio officiis 
+                  |earum? Rerum quos necessitatibus cupiditate quisquam sunt reprehenderit dignissimos nemo impedit similique commodi rem 
+                  |illo beatae eos aliquid nam nulla voluptatum, optio deleniti fugiat. Tenetur, dolore beatae iste quos distinctio incidunt 
+                  |veniam, animi dolores odio iusto natus alias corporis repellendus deleniti molestiae laudantium esse magni reprehenderit suscipit. 
+                  |Accusamus quis rerum doloremque expedita? Quo!
+
+          .product-detail__carousel 
+            .product-highlight__header.section-header.d-flex.justify-content-space-between
+              +titleItemCommon("fas fa-th-large","SẢN PHẨM NỔI BẬT")
+              +actionCarousel("12", "13", "14")
+
+            +carouselProduct(products, "carouselProduct12", 3, 4, 6, 12, "desktop")
+            +carouselProduct(products, "carouselProduct13", 2, 4, 6, 12, "tablet")
+            +carouselProduct(products, "carouselProduct14", 1, 4, 6, 12, "phone") 
