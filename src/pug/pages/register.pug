@@ -1,0 +1,54 @@
+extend ../base/base.pug
+block content
+  section.form-page-style.register-page
+    .container 
+      -let listBreadcrumb = [{link: "/", name:"Trang chủ"}, {name:"Đăng ký"}]; 
+        +breadcrumb(listBreadcrumb)
+      h1 THÔNG TIN CÁ NHÂN
+      form
+        .row
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="fullname") 
+                |Họ và tên: 
+                sup *
+              input(type="text" class="form-control" id="fullname" aria-describedby="emailHelp")
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="email") 
+                |Email: 
+                sup *
+              input(type="email" class="form-control" id="email" aria-describedby="emailHelp")
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="numberphone") 
+                |Số điện thoại: 
+                sup *
+              input(type="text" class="form-control" id="numberphone" aria-describedby="emailHelp")
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="address") 
+                |Địa chỉ: 
+                sup *
+              input(type="text" class="form-control" id="address" aria-describedby="emailHelp")
+          .col-xl-12.col-lg-12.col-md-12.col-sm-12
+            .form-check.form-check-inline
+              input(class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1")
+              label(class="form-check-label" for="inlineCheckbox1") Đăng ký nhận tin tức qua email
+          .col-xl-12.col-lg-12.col-md-12.col-sm-12
+            h1 THÔNG TIN ĐĂNG NHẬP
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="fullname") 
+                |Họ và tên: 
+                sup *
+              input(type="text" class="form-control" id="fullname" aria-describedby="emailHelp")
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            .form-group
+              label(for="email") 
+                |Email: 
+                sup *
+              input(type="email" class="form-control" id="email" aria-describedby="emailHelp")
+          .col-xl-12.col-lg-12.col-md-12.col-sm-12
+            button.btn.btn-dark.btn--bg-dark ĐĂNG NHẬP
+            button.btn.btn-warning.btn--color-primary.btn--bg-yellow ĐĂNG KÝ

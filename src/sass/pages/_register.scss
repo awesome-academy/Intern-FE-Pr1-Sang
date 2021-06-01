@@ -1,0 +1,19 @@
+.form-page-style {
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 24px;
+  }
+  input {
+    height: 48px;
+    font-size: 1.6rem;
+  }
+  sup {
+    color: red;
+  }
+}
+
+.btn--bg-dark,
+.btn--bg-yellow {
+  padding: 8px 12px;
+  font-size: 1.5rem;
+}
