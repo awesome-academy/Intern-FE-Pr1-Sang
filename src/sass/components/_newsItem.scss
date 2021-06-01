@@ -1,0 +1,29 @@
+.newsItem {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid silver;
+  &__title {
+    margin-top: 12px;
+    font-size: 1.6rem;
+  }
+  &__info {
+    color: $silver;
+    flex-wrap: wrap;
+    span {
+      margin-right: 12px;
+      a {
+        color: $yellow;
+        margin-left: 4px;
+        font-style: italic;
+      }
+    }
+  }
+  &__desc {
+    color: $silver;
+    a {
+      color: $yellow;
+      margin-left: 4px;
+      font-style: italic;
+    }
+  }
+}

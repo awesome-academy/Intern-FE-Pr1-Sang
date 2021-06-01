@@ -1,0 +1,35 @@
+extend ../base/base.pug
+block content
+  section.news-page 
+    .container 
+      -let listBreadcrumb = [{link: "/", name:"Trang chủ"}, {name:"Tin tức"}]; 
+        +breadcrumb(listBreadcrumb)
+      .row
+        .col-xl-3.col-lg-3.col-md-12.col-sm-12 
+          .news-page__menu 
+            +Category("DANH MỤC SẢN PHẨM", "category5", "fas fa-th-large", "fas fa-th-large", listFilter, false)
+            +Category("DANH MỤC TIN TỨC", "category6", "fas fa-th-large", "fas fa-th-large", listNews, false)
+            .news-page__menu__image
+              h2.news-page__menu__image__title
+                i.fas.fa-th-large
+                |THƯ VIỆN HÌNH ẢNH
+              ul.news-page__menu__image__list.d-flex
+                each item in newsImg
+                  li.news-page__menu__image__item 
+                    img(src=item, alt="img news")
+            .news-page__menu__tag 
+              h2.news-page__menu__tag__title
+                i.fas.fa-th-large
+                |THẺ TAGS
+                ul.news-page__menu__tag__list.d-flex
+                  each item in newsTag
+                    li.news-page__menu__tag__item
+                      a(href="")= item 
+        .col-xl-9.col-lg-9.col-md-12.col-sm-12 
+          -let newsImgTitel = ["assets/images/article/1.png", "assets/images/article/2.png","assets/images/article/3.png","assets/images/article/4.png","assets/images/article/5.png"];
+          each item in newsImgTitel
+            +newsItem(item)  
+      .row 
+        .col-xl-12.col-lg-12.col-md-12.col-sm-12 
+          .news-page__panigation 
+            +pagination()               
