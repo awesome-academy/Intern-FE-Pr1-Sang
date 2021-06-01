@@ -5,15 +5,18 @@
 @import "./components/carousel";
 @import "./components/modal";
 @import "./components/breadcrumb";
-@import "./layouts/footer";
-@import "./layouts/header";
 @import "./components/categories";
 @import "./components/product";
+@import "./components/newsItem";
+@import "./components/pagination";
+@import "./layouts/footer";
+@import "./layouts/header";
 @import "./pages/listProducts.scss";
 @import "./pages/register.scss";
 @import "./pages/login.scss";
 @import "./pages/detailProduct";
 @import "./pages/detailNews";
+@import "./pages/news";
 @import "./pages/error";
 
 @import "./pages/index.scss";

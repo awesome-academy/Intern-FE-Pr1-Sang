@@ -67,17 +67,4 @@
       }
     }
   }
-  &__pagination {
-    margin-top: 40px;
-    float: right;
-    .page-link {
-      padding: 8px 16px !important;
-      color: $yellow;
-    }
-    .page-item.active .page-link {
-      color: $white;
-      border-color: $yellow;
-      background-color: $yellow;
-    }
-  }
 }
