@@ -1,0 +1,34 @@
+extend ../base/base.pug
+block content
+  section.form-page-style.login-page
+    .container 
+      -let listBreadcrumb = [{link: "/", name:"Trang chủ"}, {name:"Đăng nhập"}]; 
+        +breadcrumb(listBreadcrumb)
+      form
+        .row
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12
+            h1 THÔNG TIN ĐĂNG NHẬP 
+            .form-group
+              label(for="fullname") 
+                |Họ và tên: 
+                sup *
+              input(type="text" class="form-control" id="fullname" aria-describedby="emailHelp")
+ 
+            .form-group
+              label(for="email") 
+                |Email: 
+                sup *
+              input(type="email" class="form-control" id="email" aria-describedby="emailHelp")
+            .d-flex.justify-content-space-between.align-items-center
+              .form-check.form-check-inline
+                input(class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1")
+                label(class="form-check-label" for="inlineCheckbox1") Đăng ký nhận tin tức qua email
+              a.login-page__forget-link(href="#") Bạn quên mật khẩu ?
+            button.btn.btn-dark.btn--bg-dark ĐĂNG NHẬP
+          .col-xl-6.col-lg-6.col-md-12.col-sm-12 
+            h1 BẠN CHƯA CÓ TÀI KHOẢN 
+            p Đăng ký tài khoản để mua hàng nhanh hơn. 
+              |Theo dõi đơn đặt hàng, vận chuyển. 
+              |Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tối.
+            
+            button.btn.btn-warning.btn--color-primary.btn--bg-yellow ĐĂNG KÝ
