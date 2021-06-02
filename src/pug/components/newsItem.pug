@@ -1,7 +1,7 @@
-mixin newsItem(img)
+mixin newsItem(item, isDetailBlog)
   .newsItem 
     .newsItem__img 
-      img(src=img, alt="img new")
+      img(src=item.img[0], alt="img new")
     h2.newsItem__title THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG
     .newsItem__info.d-flex
       span.newsItem__info__time Thứ năm, ngày 23/10/2015 8:00 AM
@@ -13,4 +13,35 @@ mixin newsItem(img)
         i.fas.fa-comments 
         |2 bình luận
     p.newsItem__desc But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure...
-      a(href="/detailNews.html") [Đọc tiếp]
+      if !isDetailBlog
+        a(href="/detailNews.html") [Đọc tiếp]
+      else 
+        -for(let i =1; i < item.img.length; i++)
+          .newsItem__img-2 
+            img(src=item.img[i], alt="img new")
+          p.newsItem__desc.newsItem__desc--2 
+            |But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure
+            br
+            |But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure
+        .newsItem__footer.d-flex.justify-content-space-between
+          .newsItem__footer__tag 
+            span TAG: 
+            span.text-yellow máy khoan,
+            |máy cắt CNC, máy in 3D, công nghiệp, hàn xí, uốn thép,. . .
+          .newsItem__footer__social 
+            span Chia sẻ:
+            each item in socials
+              a(href="")
+                i(class=item)     
+
+mixin commentItem(item)
+  .comment-item.d-flex 
+    .comment-item__img 
+      img(src=item.img, alt="img author")
+    .comment-item__info 
+      h4= item.name
+      .comment-item__info__time.d-flex.justify-content-space-between
+        span= item.date
+        a.text-yellow(href="") Trả lời
+      p.comment-item__info__content.text-clamp.text-clamp--2= item.content
+

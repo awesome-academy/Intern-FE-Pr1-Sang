@@ -1,0 +1,29 @@
+.detail-news {
+  &__comment {
+    border-bottom: 1px solid $silver;
+    h3 {
+      margin: 46px 0;
+    }
+    .comment-item {
+      margin-bottom: 46px;
+    }
+    .comment-item:nth-child(odd) {
+      margin-left: 96px;
+      @include for-size(normal, down) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__writen-comment {
+    margin-bottom: 50px;
+    h3 {
+      font-size: 1.5rem;
+      margin: 50px 0;
+    }
+    button {
+      width: auto;
+      margin-left: 0;
+    }
+  }
+}

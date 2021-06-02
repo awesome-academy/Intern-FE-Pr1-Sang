@@ -1,0 +1,13 @@
+mixin inputFormGroup(typeInput, label, id, isObligatory)
+  .form-group
+    label(for=id)= label
+      if isObligatory 
+        sup *
+    input(type=typeInput class="form-control" id=id aria-describedby="emailHelp")
+
+mixin textareaFormGroup(label, id, isObligatory)
+  .form-group
+    label(for=id)= label 
+      if isObligatory 
+        sup *
+    textarea( class="form-control" id=id rows="4" aria-describedby="emailHelp")
