@@ -138,6 +138,25 @@
       border-radius: 50%;
       text-align: center;
     }
+    &__list {
+      z-index: 1000;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #fff;
+      width: 400px;
+      @include borderMe();
+      @include transition();
+      @include for-size(mdC, down) {
+        width: 300px;
+      }
+    }
+    &:hover {
+      .header__cart__list {
+        display: block;
+      }
+    }
   }
 }
 

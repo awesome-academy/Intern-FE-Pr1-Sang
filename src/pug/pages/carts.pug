@@ -1,0 +1,22 @@
+extend ./../base/base.pug
+block content
+  section.cart-page
+    .container 
+      -let listBreadcrumb = [{link: "/", name:"Trang chủ"}, {name:"Giỏ hàng"}]; 
+          +breadcrumb(listBreadcrumb)
+      .cart-page__list
+        +cartList(carts)
+      .cart-page__total.mt-50
+        table.cart-page__total__table
+          tr 
+            th Tổng tiền	
+            td 6.850.000 Đ
+          tr 
+            th Thuế(VAT)
+            td 685.000 Đ
+          tr 
+            th Thanh toán
+            td.text-price 7.520.000 Đ
+      .cart-page__action.mt-30
+        button.btn.btn-dark.btn--bg-dark TIẾP TỤC MUA HÀNG
+        button.btn.btn-warning.btn--color-primary.btn--bg-yellow THANH TOÁN

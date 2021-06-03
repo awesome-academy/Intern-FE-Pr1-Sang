@@ -1,0 +1,36 @@
+mixin cartList(list)
+  table(class="table table-bordered cart-list")
+    thead
+      tr
+        th(scope="col") STT
+        th(scope="col") SẢN PHẨM
+        th(scope="col") THÔNG TIN
+        th(scope="col") ĐƠN GIÁ
+        th(scope="col") SỐ LƯỢNG
+        th(scope="col") THÀNH TIỀN
+        th(scope="col") XOÁ
+    tbody
+      each item,index in list
+        tr
+          td= index+1
+          td.cart-list__img 
+            img(src=item.product, alt="img")
+          td= item.name
+          td #{item.price} Đ
+          td.cart-list__count
+            input(type="number" min="1" value=item.count)
+          td #{item.price} Đ
+          td.text-price.cart-list__delete
+            i.fas.fa-times
+
+mixin subCart(list)
+  .sub-cart-header 
+    -for(let i =0; i< list.length; i++)
+      if i < 3
+        .sub-cart-header__item.d-flex.align-items-center.justify-content-space-between
+          .sub-cart-header__item__img 
+            img(src=list[i].product, alt="img")
+          .sub-cart-header__item__name= list[i].name
+          .sub-cart-header__item__price.text-price= `${list[i].price} x ${list[i].count}`
+    .sub-cart-header__link
+      a(href="/carts.html").btn.btn-warning.btn--color-primary.btn--bg-yellow ĐÉN GIỎ HÀNG

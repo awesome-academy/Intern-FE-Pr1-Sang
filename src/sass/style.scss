@@ -9,6 +9,7 @@
 @import "./components/product";
 @import "./components/newsItem";
 @import "./components/pagination";
+@import "./components/cart";
 @import "./layouts/footer";
 @import "./layouts/header";
 @import "./pages/listProducts.scss";
@@ -18,5 +19,6 @@
 @import "./pages/detailNews";
 @import "./pages/news";
 @import "./pages/error";
+@import "./pages/cart";
 
 @import "./pages/index.scss";
