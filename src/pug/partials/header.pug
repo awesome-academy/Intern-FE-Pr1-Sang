@@ -1,3 +1,4 @@
+include ../components/carts.pug
 mixin ItemMenu(item, index)
   li.menu-common__item
     a.text-hover-bg.menu-common__link(href="")
@@ -88,6 +89,8 @@ header
               li.menu-mobile__item 
                 a.text-hover(href="") LIÊN HỆ
           .header__cart   
-            a(href="")
+            a(href="/carts.html")
               i.fas.fa-shopping-cart
             span 0
+            .header__cart__list
+              +subCart(carts)

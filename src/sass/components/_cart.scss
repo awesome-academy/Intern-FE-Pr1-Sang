@@ -1,0 +1,54 @@
+.cart-list {
+  th,
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th {
+    font-size: 1.6rem;
+  }
+  td {
+    font-size: 1.5rem;
+  }
+  &__img > img {
+    @include square-box(150px);
+  }
+
+  &__count {
+    input {
+      text-align: center;
+      width: 30%;
+      height: 24px;
+      font-weight: 500;
+      @include for-size(mdC, down) {
+        width: 60%;
+      }
+    }
+  }
+
+  &__delete {
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+}
+
+.sub-cart-header {
+  &__item {
+    padding: 8px 12px;
+    &__img {
+      img {
+        @include square-box(64px);
+      }
+    }
+  }
+
+  &__link {
+    text-align: right;
+    margin-bottom: 12px;
+    a {
+      width: 40% !important;
+      padding: 8px 12px !important;
+      text-align: center;
+    }
+  }
+}

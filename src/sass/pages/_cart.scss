@@ -1,0 +1,41 @@
+.cart-page {
+  &__list {
+    @include for-size(mdC, down) {
+      overflow-x: auto;
+    }
+  }
+
+  &__total {
+    @include flex-box(flex-end);
+    &__table {
+      font-size: 1.6rem;
+      width: 50%;
+      text-align: right;
+      @include for-size(mdC, down) {
+        overflow-x: auto;
+      }
+      @include for-size(mdC, down) {
+        width: 100%;
+      }
+    }
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+      padding: 8px 12px;
+    }
+  }
+
+  &__action {
+    margin-bottom: 50px;
+    @include flex-box(flex-end);
+    button:last-child {
+      margin-right: 0;
+      width: auto;
+      @include for-size(xl, down) {
+        width: auto !important;
+      }
+    }
+  }
+}
