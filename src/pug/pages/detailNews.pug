@@ -1,0 +1,23 @@
+extend ./news.pug
+block contentNews 
+  .col-xl-9.col-lg-9.col-md-12.col-sm-12 
+    .detail-news
+      -let newDtail = [{img: ["assets/images/article/1.png", "assets/images/article/2.png", "assets/images/article/3.png"]}];
+        +newsItem(newDtail[0], true)
+      .detail-news__comment 
+        h3 Bình luận:
+        +commentItem(comments[0])
+        +commentItem(comments[0])
+        +commentItem(comments[0])
+      .detail-news__writen-comment
+        h3 VIẾT BÌNH LUẬN CỦA BẠN:
+        .form-page-style
+          .row 
+            .col-xl-6.col-lg-6.col-md-12
+              +inputFormGroup("text","Họ và tên: ","name-comment", true)
+            .col-xl-6.col-lg-6.col-md-12
+              +inputFormGroup("email","Email: ","name-comment", true)
+            .col-xl-12.col-lg-12.col-md-12
+              +textareaFormGroup("Bình luận:","area-comment", false)
+            .col-xl-12.col-lg-12.col-md-12 
+              button.btn.btn-warning.btn--color-primary.btn--bg-yellow GỬI BÌNH LUẬN    

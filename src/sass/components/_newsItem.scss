@@ -6,6 +6,7 @@
     margin-top: 12px;
     font-size: 1.6rem;
   }
+
   &__info {
     color: $silver;
     flex-wrap: wrap;
@@ -18,12 +19,78 @@
       }
     }
   }
+
   &__desc {
     color: $silver;
+    text-align: justify;
     a {
       color: $yellow;
       margin-left: 4px;
       font-style: italic;
+    }
+  }
+
+  &__img-2 {
+    margin: 24px 32px 0 32px;
+  }
+
+  &__desc--2 {
+    margin-top: 24px;
+  }
+
+  &__footer {
+    margin-top: 24px;
+    @include for-size(normal, down) {
+      flex-direction: column;
+    }
+    &__tag {
+      span:first-child {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__social {
+      span:first-child {
+        font-size: 1.6rem;
+      }
+      a {
+        @include square-box(32px);
+        display: inline-block;
+        text-align: center;
+        border: 1px solid $silver;
+        margin-left: 8px;
+        color: $silver;
+      }
+    }
+  }
+}
+
+.comment-item {
+  &__img {
+    height: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    img {
+      @include square-box(100px);
+    }
+  }
+
+  &__info {
+    padding-left: 12px;
+    h4 {
+      font-size: 1.4rem;
+    }
+    &__time {
+      font-style: italic;
+      @include for-size(normal, down) {
+        flex-direction: column;
+      }
+      span {
+        color: $silver;
+      }
+      a {
+        text-decoration: underline;
+      }
     }
   }
 }
