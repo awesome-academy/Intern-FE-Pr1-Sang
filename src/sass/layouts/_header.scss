@@ -79,7 +79,7 @@
         margin: auto;
       }
       input {
-        padding: 24px;
+        padding: 16px 24px;
         font-size: 1.6rem;
         border-radius: 40px !important;
       }
@@ -140,12 +140,13 @@
     }
     &__list {
       z-index: 1000;
-      display: none;
       position: absolute;
       right: 0;
       top: 100%;
       background-color: #fff;
       width: 400px;
+      transform: scale(0);
+      transform-origin: (90% 0);
       @include borderMe();
       @include transition();
       @include for-size(mdC, down) {
@@ -154,7 +155,7 @@
     }
     &:hover {
       .header__cart__list {
-        display: block;
+        transform: scale(1);
       }
     }
   }
