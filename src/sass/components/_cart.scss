@@ -49,6 +49,9 @@
       width: 40% !important;
       padding: 8px 12px !important;
       text-align: center;
+      @include for-size(normal, down) {
+        width: 50% !important;
+      }
     }
   }
 }
